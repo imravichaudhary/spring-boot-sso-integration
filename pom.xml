@@ -16,6 +16,7 @@
 
     <properties>
         <java.version>14</java.version>
+        <spring.security.saml2.core>1.0.10.RELEASE</spring.security.saml2.core>
     </properties>
 
     <dependencies>
@@ -30,6 +31,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security.extensions</groupId>
+            <artifactId>spring-security-saml2-core</artifactId>
+            <version>${spring.security.saml2.core}</version>
         </dependency>
 
         <dependency>
@@ -64,5 +71,13 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>alfresco</id>
+            <name>Alfresco</name>
+            <url>https://artifacts.alfresco.com/nexus/content/repositories/public/</url>
+        </repository>
+    </repositories>
 
 </project>
