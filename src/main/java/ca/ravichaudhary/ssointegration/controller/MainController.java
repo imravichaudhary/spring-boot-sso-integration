@@ -5,12 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/pub/")
-public class TestController {
+@RequestMapping("/")
+public class MainController {
 
     @GetMapping("")
-    public String test() {
-        return "Hello I'm public api";
+    public String success() {
+        return  "I think I'm logged in now";
     }
-
 }

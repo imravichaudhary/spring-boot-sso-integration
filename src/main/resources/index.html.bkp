@@ -1,0 +1,17 @@
+<html>
+
+<head>
+    <title>Test Application</title>
+</head>
+
+<body>
+
+    <h1>Login to Test Application using: </h1>
+    <ul>
+        <li>IdpOne - <a href="/saml2/authenticate/idpOne">Click here</a></li>
+        <li>IdpTwo - <a href="/saml2/authenticate/idpTwo">Click here</a></li>
+    </ul>
+
+</body>
+
+</html>

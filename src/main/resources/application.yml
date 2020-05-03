@@ -1,3 +1,42 @@
+spring:
+  application:
+    name: SSOIntegration
+  security:
+    saml2:
+      relyingparty:
+        registration:
+          idpone:
+            identityprovider:
+              entity-id: https://sts.windows.net/eb97e397-4caa-4d52-aefa-9a9b6ad13af1/
+              sso-url: https://login.microsoftonline.com/eb97e397-4caa-4d52-aefa-9a9b6ad13af1/saml2
+              verification:
+                credentials:
+                  - certificate-location: "classpath:saml2/idpone/idpOne.cer"
+            signing:
+              credentials:
+                - private-key-location: "classpath:saml2/idpone/idpone.privateKey.key"
+                  certificate-location: "classpath:saml2/idpone/idpone.certificate.crt"
+          idptwo:
+            identityprovider:
+              entity-id: https://localhost:8443/saml/metadata/idptwo
+              sso-url: https://idp2.example.org/SSO
+              verification:
+                credentials:
+                  - certificate-location: "classpath:saml2/idpone/idpOne.cer"
+              signing:
+                credentials:
+                  - private-key-location: "classpath:saml2/idpone/idpone.privateKey.key"
+                    certificate-location: "classpath:saml2/idpone/idpone.certificate.crt"
+
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-alias: ssointegration
+    key-store: "classpath:ssointegration-keystore.p12"
+    key-store-password: password
+    key-store-type: PKCS12
+
 management:
   endpoints:
     web:
