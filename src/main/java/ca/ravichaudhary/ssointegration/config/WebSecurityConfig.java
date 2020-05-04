@@ -15,8 +15,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/actuator/**").permitAll()
                 .antMatchers("/pub/**").permitAll()
                 .anyRequest().authenticated()
-            .and()
-            .saml2Login();
-//            .saml2Login(saml2 -> saml2.loginPage("/pub/login"));
+                .and()
+                .saml2Login()
+                ;
     }
 }

@@ -18,15 +18,15 @@ spring:
                   certificate-location: "classpath:saml2/idpone/idpone.certificate.crt"
           idptwo:
             identityprovider:
-              entity-id: https://localhost:8443/saml/metadata/idptwo
-              sso-url: https://idp2.example.org/SSO
+              entity-id: http://www.okta.com/exk3rrplqeZWMzD4Y357
+              sso-url: https://dev-270363.okta.com/app/ravichaudharydev270363_multipleidptesting_1/exk3rrplqeZWMzD4Y357/sso/saml
               verification:
                 credentials:
-                  - certificate-location: "classpath:saml2/idpone/idpOne.cer"
-              signing:
-                credentials:
-                  - private-key-location: "classpath:saml2/idpone/idpone.privateKey.key"
-                    certificate-location: "classpath:saml2/idpone/idpone.certificate.crt"
+                  - certificate-location: "classpath:saml2/idptwo/okta.cert"
+            signing:
+              credentials:
+                - private-key-location: "classpath:saml2/idpone/idpone.privateKey.key"
+                  certificate-location: "classpath:saml2/idpone/idpone.certificate.crt"
 
 server:
   port: 8443
